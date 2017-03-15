@@ -29,12 +29,22 @@ library(dplyr)
 
 head(base)
 
-basecortada <- select(base, branch_office, device_mac)
+columnas <- colnames(base)
 
-base$visitor
+basecortada <- select(base, branch_office, device_mac,probe)
+
+#seleccionar un vector
+# y operacion cn vector
+class(base$session_time_lapse)
+
+promedio_sesio <- mean(base$session_time_lapse)
+
+#tabla frecuencia
 
 table(base$hour_tz)
 table(base$visitor)
+
+# crea un histograma
 
 hist(base$hour_tz)
 
